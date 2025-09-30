@@ -8,6 +8,9 @@ runs:
       id: build-image
       shell: bash
       run: |
-        docker build -t "$REGISTRY_HOSTNAME"/"$ICR_NAMESPACE"/"$IMAGE_NAME":"$GITHUB_SHA" \
+        IMAGE_URL="$REGISTRY_HOSTNAME"/"$ICR_NAMESPACE"/"$IMAGE_NAME":"$GITHUB_SHA"
+        docker build -t "$IMAGE_URL" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" .
+        docker inspect ${IMAGE_URL}
+        docker push ${IMAGE_URL}
