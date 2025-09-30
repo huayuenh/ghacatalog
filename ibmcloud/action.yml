@@ -1,0 +1,15 @@
+name: IBMCloud CLI install and Login
+description: IBMCloud CLI install and Login
+
+runs:
+  using: composite
+  steps:
+    - name: IBMCloud install and Login
+      id: ibmcloud-login
+      shell: bash
+      run: |
+        curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        ibmcloud --version
+        ibmcloud config --check-version=false
+        ibmcloud plugin install -f kubernetes-service
+        ibmcloud plugin install -f container-registry
