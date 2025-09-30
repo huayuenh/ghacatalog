@@ -1,0 +1,11 @@
+name: Container Registry
+description: Container Registry
+
+runs:
+  using: composite
+  steps:
+    - name: ICR Push
+      id: icr-push
+      shell: bash
+      run: |
+        echo "some ICR"

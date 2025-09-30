@@ -1,0 +1,11 @@
+name: Git Clone
+description: Clone a targeted repository
+
+runs:
+  using: composite
+  steps:
+    - name: Git Clone
+      id: git-clone
+      shell: bash
+      run: |
+        echo "some cloning code"

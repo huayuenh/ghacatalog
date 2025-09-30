@@ -1,0 +1,16 @@
+name: Unit Tests
+description: Unit Tests
+
+runs:
+  using: composite
+  steps:
+    - name: Run Unit Tests
+      id: unit-tests
+      shell: bash
+      run: |
+        echo "some unit tests"
+        pwd
+        ls
+        ls -a
+        cd .github
+        ls -a

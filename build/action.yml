@@ -1,0 +1,11 @@
+name: Image Build
+description: Image Build
+
+runs:
+  using: composite
+  steps:
+    - name: Build Image
+      id: build-image
+      shell: bash
+      run: |
+        echo "some building"
