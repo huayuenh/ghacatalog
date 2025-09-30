@@ -1,0 +1,11 @@
+name: Deploy to Kubernetes
+description: Deploy to Kubernetes
+
+runs:
+  using: composite
+  steps:
+    - name: Deploy to Kubernetes
+      id: deploy-to-kubernetes
+      shell: bash
+      run: |
+        echo "Deployiny to Kubernetes"
