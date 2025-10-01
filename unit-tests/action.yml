@@ -10,7 +10,10 @@ runs:
       run: |
         echo "some unit tests"
         pwd
-        ls
-        ls -a
-        cd .github
-        ls -a
+        if [ -f ./test/run-tests.sh ]; then
+          source ./test/run-tests.sh
+          echo -n $FILE_LOCATIONS > $(results.test-result-file-paths.path)
+          echo -n $TEST_TYPES > $(results.test-types.path)
+        else
+          echo "Test runner script not found: ./test/run-tests.sh"
+        fi

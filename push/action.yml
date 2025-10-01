@@ -1,0 +1,13 @@
+name: Push Image
+description: Push Image to ICR
+
+runs:
+  using: composite
+  steps:
+    - name: Push Image
+      id: push-image
+      shell: bash
+      run: |
+        IMAGE_URL="$REGISTRY_HOSTNAME"/"$ICR_NAMESPACE"/"$IMAGE_NAME":"$GITHUB_SHA"
+        docker inspect ${IMAGE_URL}
+        docker push ${IMAGE_URL}
