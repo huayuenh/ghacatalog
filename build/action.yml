@@ -1,10 +1,10 @@
 name: Image Build
 description: Image Build
-outputs:
-  imagename: ${{ steps.build-image.outputs.imagename }}
-  testval: ${{ steps.build-image.outputs.testval }}
 runs:
   using: composite
+  outputs:
+    imagename: ${{ steps.build-image.outputs.imagename }}
+    testval: ${{ steps.build-image.outputs.testval }}
   steps:
     - name: Build Image
       id: build-image
