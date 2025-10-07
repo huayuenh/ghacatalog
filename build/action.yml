@@ -1,6 +1,7 @@
 name: Image Build
 description: Image Build
-
+outputs:
+  
 runs:
   using: composite
   steps:
@@ -13,4 +14,6 @@ runs:
         docker build -t "$IMAGE_URL" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" .
-        echo "image_name=$IMAGE_NAME" >> "$GITHUB_OUTPUT"
+        echo "image_name=${IMAGE_NAME}" >> "$GITHUB_OUTPUT"
+        echo "image name"
+        echo $image_name
