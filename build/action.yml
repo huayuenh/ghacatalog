@@ -13,4 +13,4 @@ runs:
         docker build -t "$IMAGE_URL" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" .
-        echo "image=$IMAGE_NAME" >> "$GITHUB_OUTPUT"
+        echo "image_name=$IMAGE_NAME" >> "$GITHUB_OUTPUT"
