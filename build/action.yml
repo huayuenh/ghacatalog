@@ -1,6 +1,5 @@
 name: Image Build
 description: Image Build
-outputs:
   
 runs:
   using: composite
