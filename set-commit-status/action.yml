@@ -1,5 +1,6 @@
 name: Set Commit Status
 description: Github action to set as status update for a PR
+shell: bash
 author: IBM
 
 branding:
