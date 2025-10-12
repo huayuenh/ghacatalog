@@ -44,6 +44,7 @@ runs:
   using: composite
   steps:
   - name: Set Commit Status
+    shell: bash
     env:
       GITHUB_TOKEN: ${{ inputs.github_token || github.token }}
     run: |
