@@ -8,7 +8,7 @@ runs:
       id: va
       shell: bash
       run: |
-        ibmcloud login --apikey "${IBMCLOUD_API_KEY}" -r "${IBMCLOUD_REGION}" -g default
+        ibmcloud login --apikey "${IBMCLOUD_API_KEY}" -r "${IBMCLOUD_REGION}" -g "${RESOURCE_GROUP}"
         ibmcloud cr region-set "${IBMCLOUD_REGION}"
         ibmcloud cr login
 
